@@ -1,19 +1,21 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import Fav from "./pages/Fav";
 import Prod from "./pages/Prod";
 
-const Tab = createBottomTabNavigator();
+// const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="ProdTab" component={Prod} />
-        <Tab.Screen name="FavTab" component={Fav} />
-      </Tab.Navigator>
+      <Drawer.Navigator>
+        <Drawer.Screen name="ProdTab" component={Prod} />
+        <Drawer.Screen name="FavTab" component={Fav} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
