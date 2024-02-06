@@ -4,13 +4,15 @@ import axios from "axios";
 
 function App() {
   function fetchData() {
-    const response = axios.get("https://jsonplaceholder.typicode.com/users");
-    console.log(response);
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
   }
   return (
     <View style={styles.container}>
-      <Text>Hello Users</Text>
-      <Button title="Get Users" onPress={fetchData} />
+      <Text>Hello API</Text>
+      <Button title="Fetch Data" onPress={fetchData} />
       <StatusBar style="auto" />
     </View>
   );
